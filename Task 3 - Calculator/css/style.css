@@ -1,0 +1,129 @@
+body {
+  background: #eca9f08a;
+}
+.container {
+  max-width: 450px;
+  margin: 20px auto 0 auto;
+  border-width: 10px;
+  border-style: groove;
+  border-color: #4e154e;
+  border-radius: 25px;
+  background: #e87af0;
+  box-shadow: 35px -35px 86px #7b417f, -35px 35px 86px #ffb3ff;
+}
+
+#calculation-area {
+  text-align: right;
+  height: 70px;
+  line-height: 100px;
+  padding: 20px 8px;
+  font-size: 50px;
+  overflow: hidden;
+  border-radius: 10px;
+  border-width: 1px;
+  border-style: solid;
+  background: #e87af0;
+  box-shadow: inset 35px -35px 80px #7c4180, inset -35px 35px 80px #ffb3ff;
+}
+
+.name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 80px;
+  font-size: 50px;
+  font-family: "Times New Roman", Times, serif;
+  text-shadow: 0 0 10px #ee00ff;
+}
+div:empty:not(:focus):before {
+  content: attr(data-text);
+  color: black;
+}
+.buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  border-radius: 15px;
+}
+
+.button {
+  line-height: 70px;
+  text-align: center;
+  font-size: 30px;
+  cursor: pointer;
+  border-radius: 15px;
+  margin: 5px;
+  background-image: linear-gradient(0deg, #be4bdb 5%, #9775fa 95%);
+  border-style: solid;
+  border-width: 1px;
+  border-color: #f408bc;
+}
+.button:hover {
+  background: #c14caf;
+  color: white;
+  animation: calci 1s ease 0s infinite normal backwards;
+}
+
+#special-btn {
+  --color: #5d0097;
+  background-color: transparent;
+  border-radius: 0.3em;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.5s;
+  font-size: 30px;
+  text-align: center;
+  font-family: inherit;
+  z-index: 1;
+}
+
+#special-btn::before,
+#special-btn::after {
+  content: "";
+  background-color: var(--color);
+  display: block;
+  width: 50px;
+  height: 50px;
+  transform: translate(-100%, -50%);
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+  transition: 0.5s ease;
+}
+#special-btn::after {
+  left: calc(100% + 1em);
+  top: calc(100% + 1em);
+}
+#special-btn:hover::before,
+#special-btn:hover::after {
+  height: 410px;
+  width: 410px;
+}
+
+@keyframes calci {
+  0% {
+    animation-timing-function: ease-out;
+    transform: scale(1);
+    transform-origin: center center;
+  }
+
+  10% {
+    animation-timing-function: ease-in;
+    transform: scale(0.91);
+  }
+
+  17% {
+    animation-timing-function: ease-out;
+    transform: scale(0.98);
+  }
+
+  33% {
+    animation-timing-function: ease-in;
+    transform: scale(0.87);
+  }
+
+  45% {
+    animation-timing-function: ease-out;
+    transform: scale(1);
+  }
+}
